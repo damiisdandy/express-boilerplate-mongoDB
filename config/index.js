@@ -25,10 +25,7 @@ passwordSchema
 module.exports = {
   port: process.env.PORT || 5000,
   cors: [
-    'https://localhost:8000',
-    'https://127.0.0.1:8000',
-    'https://localhost:9000',
-    'https://127.0.0.1:9000',
+    // FrontEnd Urls go here
   ],
   cookie: {
     httpOnly: true,
@@ -38,7 +35,7 @@ module.exports = {
   },
   db: {
     url: process.env.MONGODB_DATABASE || 'mongodb://localhost/your-app',
-    ROLES: ['is_user', 'is_staff', 'is_admin'],
+    ROLES: ['is_user', 'is_staff', 'is_admin'], // change User roles here
   },
   authentication: {
     jwtSecret: process.env.JWT_SECRET,
@@ -49,10 +46,5 @@ module.exports = {
   mail: {
     api_key: process.env.SENDGRID_APIKEY,
     from: '',
-  },
-  paystack: {
-    api_key: process.env.PAYSTACK_KEY,
-    api_public_key: process.env.PAYSTACK_PUBLIC_KEY,
-    commission_rate: 0.2,
   },
 };
